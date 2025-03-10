@@ -4,14 +4,22 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "dev:hcm": "hcm 'src/**/*.module.css' -w",
+    "hcm": "hcm 'src/**/*.module.css'",
+    "build": "prisma generate --no-engine && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint .",
+    "lint:js": "eslint --ext .ts,.tsx,.js --ignore-path .gitignore .",
+    "lint:prettier": "prettier --check \"./**/*.{ts,tsx,js}\" --ignore-path .gitignore",
+    "lint:style": "stylelint \"src/**/*.css\" --ignore-path .gitignore",
+    "lint:fix": "npm run lint:js -- --fix && prettier --write \"./**/*.{ts,tsx,js}\" --ignore-path .gitignore && npm run lint:style -- --fix",
+    "typecheck": "npm run hcm && tsc --noEmit"
   },
   "dependencies": {
     "@mantine/core": "^7.17.0",
     "@mantine/hooks": "^7.17.0",
     "@mantinex/mantine-logo": "^1.1.0",
+    "@next/eslint-plugin-next": "^15.2.1",
     "@prisma/client": "^6.3.1",
     "@supabase/ssr": "^0.5.2",
     "@supabase/supabase-js": "^2.48.0",
@@ -24,12 +32,16 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@eslint/js": "^9.22.0",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^9",
+    "eslint": "^9.22.0",
     "eslint-config-next": "15.1.4",
+    "happy-css-modules": "^3.2.0",
+    "prettier": "3.5.3",
     "prisma": "^6.3.1",
+    "stylelint": "^16.15.0",
     "typescript": "^5"
   }
 }

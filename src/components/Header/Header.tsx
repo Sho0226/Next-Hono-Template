@@ -27,7 +27,7 @@ import {
   useMantineTheme,
 } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
-import classes from "./Header.module.css";
+import styles from "./Header.module.css";
 import { createClient } from "@/lib/supabase/client";
 import { useRouter } from "next/navigation";
 
@@ -99,8 +99,6 @@ export function HeaderMegaMenu() {
 
   const techStackLinks = techStackMockdata.map((item) => (
     <Anchor
-      href={item.link}
-      className={classes.subLink}
       key={item.title}
       target="_blank"
     >
@@ -123,7 +121,6 @@ export function HeaderMegaMenu() {
   const docsLinks = docsMockdata.map((item) => (
     <Anchor
       href={item.link}
-      className={classes.subLink}
       key={item.title}
       target="_blank"
     >
@@ -158,7 +155,7 @@ export function HeaderMegaMenu() {
 
   return (
     <Box>
-      <header className={classes.header}>
+      <header className={styles.header}>
         <Group justify="space-between" h="100%">
           <h3>Next-Hono-Template</h3>
           <Group h="100%" gap={0} visibleFrom="sm">
@@ -170,7 +167,7 @@ export function HeaderMegaMenu() {
               withinPortal
             >
               <HoverCard.Target>
-                <a className={classes.link}>
+                <a>
                   <Center inline>
                     <Box component="span" mr={5}>
                       Tech Stack
@@ -187,7 +184,7 @@ export function HeaderMegaMenu() {
                 <SimpleGrid cols={2} spacing={0}>
                   {techStackLinks}
                 </SimpleGrid>
-                <div className={classes.dropdownFooter}>
+                <div className={styles.dropdownFooter}>
                   <Group justify="space-between">
                     <div>
                       <Text fw={500} fz="sm">
@@ -212,7 +209,7 @@ export function HeaderMegaMenu() {
               withinPortal
             >
               <HoverCard.Target>
-                <a className={classes.link}>
+                <a>
                   <Center inline>
                     <Box component="span" mr={5}>
                       Docs
@@ -255,7 +252,7 @@ export function HeaderMegaMenu() {
       >
         <ScrollArea h="calc(100vh - 80px" mx="-md">
           <Divider my="sm" />
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
+          <UnstyledButton onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
                 Tech Stack
@@ -264,7 +261,7 @@ export function HeaderMegaMenu() {
             </Center>
           </UnstyledButton>
           <Collapse in={linksOpened}>{techStackLinks}</Collapse>
-          <UnstyledButton className={classes.link} onClick={toggleLinks}>
+          <UnstyledButton onClick={toggleLinks}>
             <Center inline>
               <Box component="span" mr={5}>
                 Docs
