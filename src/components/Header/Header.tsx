@@ -143,7 +143,7 @@ export function HeaderMegaMenu() {
     <Box>
       <header className={styles.header}>
         <Group justify="space-between" h="100%">
-          <h3>Next-Hono-Template</h3>
+          <h3 style={{ cursor : "pointer" }}>Next-Hono-Template</h3>
           <Group h="100%" gap={0} visibleFrom="sm">
             <HoverCard
               width={600}
