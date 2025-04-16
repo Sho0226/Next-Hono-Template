@@ -1,10 +1,19 @@
 import { login, signup } from "@/app/auth/login/action";
 import styles from "./page.module.css";
 
-export default function LoginPage() {
+export default function LoginPage({
+  searchParams,
+}: {
+  searchParams: { error?: string };
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.card}>
+        {searchParams.error && (
+          <div className={styles.error}>
+            {searchParams.error}
+          </div>
+        )}
         <form method="post" className={styles.form}>
           <div>
             <label htmlFor="email" className={styles.label}>
