@@ -101,6 +101,7 @@ export function HeaderMegaMenu() {
   const handleLogout = () => {
     Logout();
     router.refresh();
+    closeDrawer();
   };
 
   const techStackLinks = techStackMockdata.map((item) => (
