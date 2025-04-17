@@ -30,6 +30,8 @@ import { useDisclosure } from "@mantine/hooks";
 import styles from "./Header.module.css";
 import { Logout } from "@/app/auth/logout/action";
 import { useRouter } from "next/navigation";
+import { createClient } from "@/lib/supabase/client";
+
 
 const techStackMockdata = [
   {
@@ -98,6 +100,17 @@ export function HeaderMegaMenu() {
   const [techStackOpened, { toggle: toggleTechStack }] = useDisclosure(false);
   const [dashBoardOpened, { toggle: toggleDashBoard }] = useDisclosure(false);
   const theme = useMantineTheme();
+  const handleClick = async () => {
+    const supabase = createClient();
+    const { data } = await supabase.auth.getSession();
+    if (data.session) {
+      router.push("/");
+    } else {
+      router.push("/auth/login");
+    }
+    closeDrawer();
+  };
+
   const handleLogout = () => {
     Logout();
     router.refresh();
@@ -144,7 +157,7 @@ export function HeaderMegaMenu() {
     <Box>
       <header className={styles.header}>
         <Group justify="space-between" h="100%">
-          <h3 style={{ cursor : "pointer" }}>Next-Hono-Template</h3>
+          <h3 style={{ cursor : "pointer" }} onClick={handleClick}>Next-Hono-Template</h3>
           <Group h="100%" gap={0} visibleFrom="sm">
             <HoverCard
               width={600}
