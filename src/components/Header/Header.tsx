@@ -100,6 +100,7 @@ export function HeaderMegaMenu() {
   const theme = useMantineTheme();
   const handleLogout = () => {
     Logout();
+    closeDrawer();
     router.refresh();
   };
 
