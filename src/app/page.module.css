@@ -6,7 +6,6 @@
   width: 100%;
   min-height: calc(100vh - 70px);
   padding: 2rem;
-  background: linear-gradient(135deg, #fff, #c3cfe2);
   font-family: var(--font-geist-sans);
 }
 .header {

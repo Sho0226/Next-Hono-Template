@@ -1,5 +1,5 @@
 "use client";
-import styles from "./page.module.css";
+import styles from "./not-found.module.css";
 import { Container, Title, Text, Group, Button } from "@mantine/core";
 
 export default function ErrorPage() {
