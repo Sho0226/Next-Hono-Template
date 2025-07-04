@@ -45,7 +45,7 @@
     "@typescript-eslint/parser": "^8.26.1",
     "eslint": "^9.22.0",
     "eslint-config-flat-gitignore": "^2.1.0",
-    "eslint-config-next": "15.1.4",
+    "eslint-config-next": "15.3.4",
     "eslint-config-prettier": "^10.1.1",
     "happy-css-modules": "^3.2.0",
     "i": "^0.3.7",
