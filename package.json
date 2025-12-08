@@ -17,7 +17,7 @@
     "format": "prettier --write \"./**/*.{ts,tsx,js,json,css,md}\" --ignore-path .gitignore"
   },
   "dependencies": {
-    "@mantine/core": "^7.17.0",
+    "@mantine/core": "^8.3.9",
     "@mantine/hooks": "^7.17.0",
     "@mantinex/mantine-logo": "^1.1.0",
     "@next/eslint-plugin-next": "^15.3.4",
