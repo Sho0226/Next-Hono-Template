@@ -33,7 +33,7 @@
     "next": "^14.2.32",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "typescript-eslint": "^8.26.1"
+    "typescript-eslint": "^8.48.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.22.0",
